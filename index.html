@@ -45,21 +45,23 @@
 </head>
 <body>
     <h1>Will you be my Valentine?</h1>
-    <img src="https://github.com/sogekinggggg/Valentine/blob/main/Screenshot%202025-02-13%20at%2013.56.03.png" alt="PoV : Me and u rn :3"> <!-- Change this to a real image URL -->
+    <img src="https://github.com/sogekinggggg/Valentine/blob/main/Screenshot%202025-02-13%20at%2013.56.03.png?raw=true" alt="Cute Image"> <!-- Change this to a real image URL -->
     <div id="buttons">
         <button id="yes">Yes</button>
         <button id="no">No</button>
     </div>
 
     <script>
-        let yesButton = document.getElementById("yes");
-        let noButton = document.getElementById("no");
-        let noTexts = ["Please say yes :(", "Why aren't you saying yes?", "Come on bby please!", "You're breaking my heart :(", "Last chance!", "Really?", "Are you sure?", "Think again!", "Just say YES!"];
+        let yesButton = document.getElementById("YES");
+        let noButton = document.getElementById("nyow");
+        let noTexts = ["Please say yes :(", "nda mau", "Come on bby pweaseee", "I said no!", "You're breaking my heart :(", "Why not bubub?", "Are you sure?", "Think again!", "Just say YES!"];
         let noClickCount = 0;
+        let yesFontSize = 20;
 
         noButton.addEventListener("click", function() {
             noClickCount++;
-            yesButton.style.fontSize = (20 + noClickCount * 10) + "px";
+            yesFontSize *= 2;
+            yesButton.style.fontSize = yesFontSize + "px";
             
             if (noClickCount < noTexts.length) {
                 noButton.innerText = noTexts[noClickCount];
@@ -70,13 +72,13 @@
                 yesButton.style.width = "100vw";
                 yesButton.style.height = "100vh";
                 yesButton.style.fontSize = "50px";
-                yesButton.innerText = "YAY! THANK YOU BABY I WUFF YOU SO MUCH MWAH MWAH MWAH 💖";
+                yesButton.innerText = "YIPPIEE I LOVE YOU SO MUCH BBYYY MWAH MWAH MWAH 💖";
                 noButton.style.display = "none";
             }
         });
 
         yesButton.addEventListener("click", function() {
-            document.body.innerHTML = "<h1>YAY! I love you! 💖</h1>";
+            document.body.innerHTML = "<h1>YIPPIEE I LOVE YOU SO MUCH BBYYY MWAH MWAH MWAH 💖</h1>";
         });
     </script>
 </body>
