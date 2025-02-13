@@ -52,34 +52,37 @@
     </div>
 
     <script>
-        let yesButton = document.getElementById("yes");
-        let noButton = document.getElementById("no");
-        let noTexts = ["Please say yes :(", "nda mau", "Come on bby pweaseee", "I said no!", "You're breaking my heart :(", "Why not bubub?", "Are you sure?", "Think again!", "Just say YES!"];
-        let noClickCount = 0;
-        let yesFontSize = 20;
+        let yesButton = document.getElementById("yes"); 
+    let noButton = document.getElementById("no");  
+    let noTexts = ["Please say yes :(", "nda mau", "Come on bby pweaseee", "I said no!", "You're breaking my heart :(", "Why not bubub?", "Are you sure?", "Think again!", "Just say YES!"];
+    let noClickCount = 0;
+    let yesFontSize = 20;
 
-        noButton.addEventListener("click", function() {
-            noClickCount++;
-            yesFontSize *= 2;
-            yesButton.style.fontSize = yesFontSize + "px";
+    noButton.addEventListener("click", function() {
+        noClickCount++;
+        yesFontSize *= 2;
+        yesButton.style.fontSize = yesFontSize + "px";
+        
+        if (noClickCount < noTexts.length) {
+            noButton.innerText = noTexts[noClickCount];
+        }
+        
+        if (noClickCount >= 9) {
+            yesButton.style.position = "absolute";
+            yesButton.style.width = "100vw";
+            yesButton.style.height = "100vh";
+            yesButton.style.fontSize = "50px";
+            yesButton.innerText = "YIPPIEE I LOVE YOU SO MUCH BBYYY MWAH MWAH MWAH 💖";
             
-            if (noClickCount < noTexts.length) {
-                noButton.innerText = noTexts[noClickCount];
-            }
-            
-            if (noClickCount >= 9) {
-                yesButton.style.position = "absolute";
-                yesButton.style.width = "100vw";
-                yesButton.style.height = "100vh";
-                yesButton.style.fontSize = "50px";
-                yesButton.innerText = "YIPPIEE I LOVE YOU SO MUCH BBYYY MWAH MWAH MWAH 💖";
-                noButton.style.display = "none";
-            }
-        });
+            // Make the "No" button completely disappear
+            noButton.style.display = "none";
+        }
+    });
 
-        yesButton.addEventListener("click", function() {
-            document.body.innerHTML = "<h1>YIPPIEE I LOVE YOU SO MUCH BBYYY MWAH MWAH MWAH 💖</h1>";
-        });
+    yesButton.addEventListener("click", function() {
+        document.body.innerHTML = "<h1>YIPPIEE I LOVE YOU SO MUCH BBYYY MWAH MWAH MWAH 💖</h1>";
+    });
+        
     </script>
 </body>
 </html>
